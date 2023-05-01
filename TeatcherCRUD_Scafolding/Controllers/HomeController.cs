@@ -8,23 +8,16 @@ namespace TeatcherCRUD_Scafolding.Controllers
 {
     public class HomeController : Controller
     {
+
+       
         public ActionResult Index()
         {
-            return View();
+            TutorialsCS _context = new TutorialsCS();
+
+            var listofData = _context.Teatchers.ToList();
+            return View(listofData);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
